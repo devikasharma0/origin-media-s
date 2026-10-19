@@ -19,6 +19,14 @@ npx playwright install chromium
 
 Save standalone animation HTML files in `clips/`. A clip should expose its render area as `#fr` and a restart control as `#rp`; an optional light-theme control can use `data-t="1"`.
 
+Generate the original 15-second soundtrack with `node make-audio.js`. The `live_countdown.html` preview plays that WAV after clicking **Enable preview sound**; browsers block audio autoplay. This supplied sound design includes countdown ticks, impacts, and whooshes.
+
+To combine the generated soundtrack with the rendered Reel, explicitly select its audio stream:
+
+```bash
+ffmpeg -y -i out/live_countdown.mp4 -i audio/live-countdown.wav -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 320k -shortest -movflags +faststart out/live_countdown_final.mp4
+```
+
 ## Render
 
 Run commands from this directory:

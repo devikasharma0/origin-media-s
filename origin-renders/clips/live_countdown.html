@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Origin Media · We Are Live (Reel 1080x1920)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Great+Vibes&family=Montserrat:wght@500;800&display=swap');
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#161616;color:#ddd;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px}
+button{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid #3a3a3a;background:#222;color:#ddd;cursor:pointer}
+button.on{border-color:#E8692D;color:#fff}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:12px;max-width:560px}
+#tm{font-size:13px;color:#999;min-width:80px}
+.fr{--bg:#050505;--fg:#F5F1EA;--mu:#8a847c;position:relative;width:360px;height:640px;background:var(--bg);overflow:hidden;border-radius:12px;flex:none}
+.fr.lt{--bg:#FAF7F2;--fg:#0B0B0B;--mu:#7a746c}
+.ctr{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:120px;pointer-events:none}
+.wm{display:flex;flex-direction:column;font-family:'Montserrat',sans-serif;font-weight:800;color:var(--fg);font-size:84px;line-height:1;letter-spacing:-.01em}
+.r1{display:flex;align-items:baseline}
+.mk{width:.56em;height:.56em;margin-right:.03em;flex:none;overflow:visible}
+.seg{transform-box:fill-box;transform-origin:center;opacity:0}
+.arc{stroke:var(--fg)}
+.l{display:inline-block;opacity:0}.i{position:relative}
+.tt{position:absolute;left:50%;top:.12em;width:.17em;height:.17em;margin-left:-.085em;background:#E8692D}
+.md{align-self:flex-end;font-size:.3em;margin-top:-.15em;letter-spacing:0;opacity:0}
+.el{position:absolute;left:0;right:0;text-align:center;opacity:0}
+.blk{position:absolute;left:0;right:0;text-align:center}
+.mw{overflow:hidden;padding:.08em 0 .2em;margin:-.08em 0 -.2em}
+.mi{display:block;transform:translateY(140%)}
+.sr{font-family:'Cormorant Garamond',serif;color:var(--fg);font-weight:500;line-height:1.08}
+.sc{font-family:'Great Vibes',cursive;color:#E8692D;line-height:1}
+.cp{font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.3em;font-size:11px;line-height:16px;color:var(--fg)}
+.hdl{font-family:'Montserrat',sans-serif;font-weight:500;color:#E8692D;font-size:13px;letter-spacing:.04em}
+.ru{height:1px;background:#E8692D;width:60px;margin:14px auto 0}
+.nums{position:absolute;left:0;right:0;top:215px;height:170px}
+.n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:170px;line-height:1;color:var(--fg);opacity:0}
+.grp{position:absolute;inset:0}
+.lv{position:absolute;left:0;right:0;top:262px;text-align:center;clip-path:inset(-20% 100% -30% -10%)}
+.pl{display:inline-flex;align-items:center;gap:8px;background:#E8692D;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:.2em;padding:7px 14px 7px 12px;border-radius:999px}
+.pd{width:8px;height:8px;border-radius:50%;background:#fff;display:inline-block}
+.fl{position:absolute;inset:0;background:#E8692D;opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="fr" id="fr">
+  <canvas id="cv" style="position:absolute;left:0;top:0;width:360px;height:640px;pointer-events:none"></canvas>
+  <div class="el" id="lbl" style="top:112px"><div class="cp" style="color:var(--mu)">GOING LIVE IN</div></div>
+  <div class="nums">
+    <div class="n">5</div><div class="n">4</div><div class="n">3</div><div class="n">2</div><div class="n" style="color:#E8692D">1</div>
+  </div>
+  <div class="grp" id="grp">
+    <div class="blk" style="top:205px"><div class="mw"><div class="mi sr" id="wa" style="font-size:54px">We are</div></div></div>
+    <div class="lv" id="lv"><span class="sc" style="font-size:120px">live.</span></div>
+    <div class="el" id="sub" style="top:430px"><div class="cp">THE STORY STARTS NOW</div></div>
+  </div>
+  <div class="ctr"><div class="wm"><div class="r1"><svg class="mk" id="mk" viewBox="8 8 84 84" aria-hidden="true"><line class="seg" x1="29.2" y1="38" x2="15.4" y2="30" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="26" y1="50" x2="10" y2="50" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="29.2" y1="62" x2="15.4" y2="70" stroke="#E8692D" stroke-width="11"/><path class="arc" id="arc" d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke-width="18" stroke-dasharray="114" stroke-dashoffset="114"/></svg><span class="l">r</span><span class="l i">ı<b class="tt"></b></span><span class="l">g</span><span class="l i">ı<b class="tt"></b></span><span class="l">n</span></div><div class="md" id="md">media</div></div></div>
+  <div class="el" id="tl" style="top:350px"><div class="sr" id="t1" style="font-size:26px"></div><div class="sc" id="t2" style="margin-top:6px"></div><div class="ru" id="ru"></div></div>
+  <div class="el" id="hd" style="top:470px"><div class="hdl">@originmedia.ind</div></div>
+  <div class="el" id="pill" style="top:150px"><span class="pl"><i class="pd" id="pd"></i>LIVE</span></div>
+  <div class="fl" id="fl"></div>
+</div>
+<div class="ctl" id="thm"><button data-t="0" class="on">Dark theme</button><button data-t="1">Light theme</button></div>
+<div class="ctl" id="tgs"></div>
+<div class="ctl"><button id="rp">Replay</button><button id="sound">Enable preview sound</button><span id="tm">0.0 / 15s</span></div>
+<audio id="previewAudio" src="../audio/live-countdown.wav" preload="auto"></audio>
+<script>
+const $=id=>document.getElementById(id);
+let onTheme=null,frameUpd=null,TI=0,A=[],st=0;
+let soundEnabled=false;
+const fr=$('fr'),mk=$('mk'),arc=$('arc'),md=$('md'),tl=$('tl'),t1=$('t1'),t2=$('t2'),ru=$('ru'),hd=$('hd'),tmEl=$('tm');
+const previewAudio=$('previewAudio');
+const segs=[...document.querySelectorAll('.seg')],ls=[...document.querySelectorAll('.l')],tts=[...document.querySelectorAll('.tt')];
+const TAG=[['Every great brand has an','origin.',50],['Where great brands','begin.',56],['Stories worth','the scroll.',52],['Built to be','remembered.',50],['Rooted in story.','Built to move.',46]];
+function setTag(){t1.textContent=TAG[TI][0];t2.textContent=TAG[TI][1];t2.style.fontSize=TAG[TI][2]+'px';}
+const tg=$('tgs');TAG.forEach((x,i)=>{const b=document.createElement('button');b.textContent=x[0]+' '+x[1];if(i===TI)b.className='on';b.onclick=()=>{TI=i;[...tg.children].forEach(c=>c.classList.toggle('on',c===b));setTag();};tg.appendChild(b);});setTag();
+document.querySelectorAll('#thm button').forEach(b=>b.onclick=()=>{fr.classList.toggle('lt',b.dataset.t==='1');document.querySelectorAll('#thm button').forEach(x=>x.classList.toggle('on',x===b));if(onTheme)onTheme();});
+function an(el,kf,o){const a=el.animate(kf,Object.assign({fill:'both',easing:'ease'},o));A.push(a);return a;}
+const SP='cubic-bezier(.3,1.6,.5,1)',EZ='cubic-bezier(.6,0,.2,1)',FO='cubic-bezier(.2,.8,.2,1)';
+const UP=[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}];
+async function enablePreviewSound(){
+  try{
+    previewAudio.currentTime=0;
+    await previewAudio.play();
+    soundEnabled=true;
+    $('sound').textContent='Sound on';
+    $('sound').classList.add('on');
+    play();
+  }catch(error){
+    console.error('Unable to enable preview audio:',error);
+    $('sound').textContent='Generate audio first';
+  }
+}
+function endCard(E){
+  const fR=fr.getBoundingClientRect(),m=mk.getBoundingClientRect();
+  const dx=fR.left+180-(m.left+m.width/2),dy=fR.top+260-(m.top+m.height/2),T0='translate('+dx+'px,'+dy+'px) scale(2.6)';
+  segs.forEach((s,i)=>an(s,[{opacity:0,transform:'scale(.3)'},{opacity:1,transform:'scale(1)'}],{duration:420,delay:E+i*110,easing:SP}));
+  an(arc,[{strokeDashoffset:114},{strokeDashoffset:0}],{duration:750,delay:E+100,easing:'ease-out'});
+  an(mk,[{transform:T0,offset:0},{transform:T0,offset:.55,easing:EZ},{transform:'none',offset:1}],{duration:1800,delay:E,easing:'linear'});
+  ls.forEach((l,i)=>an(l,[{opacity:0,transform:'translateX(-.15em)'},{opacity:1,transform:'none'}],{duration:420,delay:E+1350+i*60}));
+  tts.forEach((x,i)=>an(x,[{opacity:0,transform:'translateY(-.4em) scale(.4)'},{opacity:1,transform:'none'}],{duration:420,delay:E+1850+i*130,easing:SP}));
+  an(md,[{opacity:0,transform:'translateX(.4em)'},{opacity:1,transform:'none'}],{duration:450,delay:E+2050});
+  an(tl,UP,{duration:700,delay:E+2550});
+  an(ru,[{width:'0px'},{width:'60px'}],{duration:600,delay:E+3000});
+  an(hd,UP,{duration:600,delay:E+3250});
+}
+// ---------- canvas: tick ring, shockwaves, burst, signal rings ----------
+const cv=$('cv'),W=360,H=640,dpr=Math.min(3,window.devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+const OR='#E8692D',CX=180,CY=300;let FG='#F5F1EA',P=[],lastS=0;
+onTheme=()=>{FG=fr.classList.contains('lt')?'#0B0B0B':'#F5F1EA';};
+const cl=(v,a,b)=>Math.max(a,Math.min(b,v)),ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const WAVES=[.5,1.5,2.5,3.5,4.5,5.9];
+function resetParticles(){P=[];for(let i=0;i<110;i++){const a=Math.random()*Math.PI*2,sp=3+Math.random()*9;P.push({x:CX,y:CY,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2,s:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.3,o:Math.random()<.75});}}
+frameUpd=function(s){
+  const f=cl((s-lastS)*60,0,3);lastS=s;
+  ctx.clearRect(0,0,W,H);
+  if(s<5.9){
+    const p=cl((s-.5)/5,0,1);
+    const g=ctx.createRadialGradient(CX,CY,0,CX,CY,170);
+    g.addColorStop(0,'rgba(232,105,45,'+(.05+.17*p).toFixed(3)+')');g.addColorStop(1,'rgba(232,105,45,0)');
+    ctx.globalAlpha=1;ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    let k=s<5.5?1:1-ease(cl((s-5.5)/.4,0,1));
+    if(s>4.5&&s<5.5)k*=1+.03*Math.sin((s-4.5)*Math.PI*8);
+    const vis=Math.floor(cl(s/.5,0,1)*60),lit=Math.floor(p*60);
+    ctx.lineCap='round';ctx.lineWidth=2;
+    for(let i=0;i<vis;i++){const a=-Math.PI/2+i*Math.PI/30,on=i<lit,r1=130*k,r2=(on?146:142)*k;
+      ctx.globalAlpha=on?1:.25;ctx.strokeStyle=on?OR:FG;ctx.beginPath();ctx.moveTo(CX+Math.cos(a)*r1,CY+Math.sin(a)*r1);ctx.lineTo(CX+Math.cos(a)*r2,CY+Math.sin(a)*r2);ctx.stroke();}
+    ctx.globalAlpha=.1;ctx.strokeStyle=FG;ctx.lineWidth=1;ctx.beginPath();ctx.arc(CX,CY,Math.max(.1,118*k),0,Math.PI*2);ctx.stroke();
+  }
+  WAVES.forEach(t=>{if(s>=t&&s<t+.7){const pr=(s-t)/.7,big=t===5.9;ctx.globalAlpha=(1-pr)*.6;ctx.strokeStyle=OR;ctx.lineWidth=big?3:2;ctx.beginPath();ctx.arc(CX,CY,(big?10:125)+pr*(big?300:110),0,Math.PI*2);ctx.stroke();}});
+  if(s>=5.9){
+    const al=cl(1-(s-8.4)/1.0,0,1);
+    for(const q of P){q.vy+=.12*f;q.x+=q.vx*f;q.y+=q.vy*f;q.vx*=Math.pow(.99,f);q.r+=q.vr*f;
+      if(al>0){ctx.globalAlpha=al;ctx.fillStyle=q.o?OR:FG;ctx.save();ctx.translate(q.x,q.y);ctx.rotate(q.r);ctx.fillRect(-q.s/2,-q.s/2,q.s,q.s);ctx.restore();}}
+  }
+  for(let j=0;j<5;j++){const t0=6+j*.7;if(s>=t0&&s<t0+1.2&&s<9.4){const pr=(s-t0)/1.2;ctx.globalAlpha=(1-pr)*.45;ctx.strokeStyle=OR;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(180,164,20+pr*90,0,Math.PI*2);ctx.stroke();}}
+  ctx.globalAlpha=1;
+};
+// ---------- timeline ----------
+const lbl=$('lbl'),ns=[...document.querySelectorAll('.n')],grp=$('grp'),wa=$('wa'),lv=$('lv'),sub=$('sub'),pill=$('pill'),pd=$('pd'),fl=$('fl');
+function play(){
+  A.forEach(x=>x.cancel());A=[];resetParticles();lastS=0;
+  if(soundEnabled){
+    previewAudio.currentTime=0;
+    previewAudio.play().catch(error=>console.error('Unable to replay preview audio:',error));
+  }
+  an(lbl,UP,{duration:600,delay:200});an(lbl,[{opacity:1},{opacity:0}],{duration:300,delay:5300,fill:'forwards'});
+  ns.forEach((n,k)=>{const t=(.5+k)*1000;
+    an(n,[{opacity:0,transform:'scale(1.8)',filter:'blur(10px)'},{opacity:1,transform:'scale(1)',filter:'blur(0px)'}],{duration:350,delay:t,easing:FO});
+    an(n,[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.55)'}],{duration:250,delay:t+750,fill:'forwards'});});
+  an(fl,[{opacity:0},{opacity:.55,offset:.15},{opacity:0}],{duration:450,delay:5900});
+  an(pill,[{opacity:0,transform:'scale(.3)'},{opacity:1,transform:'none'}],{duration:500,delay:6000,easing:SP});
+  an(pd,[{opacity:1},{opacity:.2}],{duration:500,delay:6400,iterations:17,direction:'alternate'});
+  an(wa,[{transform:'translateY(140%)'},{transform:'none'}],{duration:800,delay:6400,easing:FO});
+  an(lv,[{clipPath:'inset(-20% 100% -30% -10%)'},{clipPath:'inset(-20% -10% -30% -10%)'}],{duration:1000,delay:6800,easing:EZ});
+  an(sub,UP,{duration:600,delay:7700});
+  an(grp,[{opacity:1,filter:'blur(0px)',transform:'none'},{opacity:0,filter:'blur(8px)',transform:'translateY(-10px)'}],{duration:500,delay:9400});
+  endCard(9900);
+  st=performance.now();
+}
+function tick(now){if(st){const s=Math.min(15,(now-st)/1000);if(frameUpd)frameUpd(s);tmEl.textContent=s.toFixed(1)+' / 15s';}requestAnimationFrame(tick);}
+$('rp').onclick=play;
+$('sound').addEventListener('click',enablePreviewSound);
+Promise.all([document.fonts.load('800 170px Montserrat'),document.fonts.load('500 11px Montserrat'),document.fonts.load('500 54px "Cormorant Garamond"'),document.fonts.load('120px "Great Vibes"')]).catch(()=>{}).then(()=>{play();requestAnimationFrame(tick);});
+</script>
+</body>
+</html>

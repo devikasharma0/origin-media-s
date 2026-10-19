@@ -29,12 +29,93 @@ if (!fs.existsSync(inputPath)) {
 
 const framesDir = path.resolve('frames');
 
+function audioVoices(type, pitch = 659) {
+  switch (type) {
+    case 'tick':
+      return [
+        { frequency: pitch, duration: 0.2, volume: 0.14 },
+        { frequency: pitch * 2, duration: 0.12, volume: 0.035 },
+      ];
+    case 'note':
+      return [{ frequency: pitch, duration: 0.38, volume: 0.075 }];
+    case 'chord':
+      return [
+        { frequency: 392, duration: 1.1, volume: 0.09 },
+        { frequency: 494, duration: 0.95, volume: 0.06 },
+        { frequency: 587, duration: 0.8, volume: 0.04 },
+      ];
+    case 'chime':
+      return [
+        { frequency: 392, duration: 1.1, volume: 0.08, fadeIn: 0.008 },
+        { frequency: 587, duration: 0.95, volume: 0.045, fadeIn: 0.008 },
+        { frequency: 784, duration: 0.8, volume: 0.025, fadeIn: 0.008 },
+      ];
+    default:
+      throw new Error(`Unsupported audio cue type: ${type}`);
+  }
+}
+
+function addAudioOutput(args, cues, audioDuration) {
+  if (!Array.isArray(cues)) {
+    throw new Error('RENDER_AUDIO_CUES must be an array.');
+  }
+
+  const voices = [];
+  for (const [index, cue] of cues.entries()) {
+    if (
+      !cue ||
+      typeof cue !== 'object' ||
+      !Number.isFinite(cue.time) ||
+      cue.time < 0 ||
+      cue.time >= audioDuration ||
+      typeof cue.type !== 'string' ||
+      (cue.pitch !== undefined && (!Number.isFinite(cue.pitch) || cue.pitch < 80 || cue.pitch > 2000))
+    ) {
+      throw new Error(`Invalid audio cue at index ${index}. Each cue needs a supported type and a time within the clip.`);
+    }
+    voices.push(...audioVoices(cue.type, cue.pitch).map(voice => ({ ...voice, time: cue.time })));
+  }
+
+  if (voices.length === 0) {
+    return;
+  }
+
+  const graph = [];
+  for (const [index, voice] of voices.entries()) {
+    const duration = Math.min(voice.duration, audioDuration - voice.time);
+    const source = `sine=frequency=${voice.frequency}:duration=${duration}:sample_rate=44100`;
+    args.push('-f', 'lavfi', '-i', source);
+
+    const fadeIn = Math.min(voice.fadeIn ?? 0.004, duration / 2);
+    const fadeOut = Math.min(0.12, duration);
+    const filters = [
+      `volume=${voice.volume}`,
+      `afade=t=in:st=0:d=${fadeIn}`,
+      `afade=t=out:st=${Math.max(0, duration - fadeOut)}:d=${fadeOut}`,
+      `adelay=${Math.round(voice.time * 1000)}|${Math.round(voice.time * 1000)}`,
+    ];
+    graph.push(`[${index + 1}:a]${filters.join(',')}[cue${index}]`);
+  }
+
+  const labels = voices.map((_, index) => `[cue${index}]`).join('');
+  graph.push(`${labels}amix=inputs=${voices.length}:duration=longest:normalize=0,volume=8,alimiter=limit=0.9,apad,atrim=duration=${audioDuration}[audio]`);
+  args.push(
+    '-filter_complex', graph.join(';'),
+    '-map', '0:v:0',
+    '-map', '[audio]',
+    '-c:a', 'aac',
+    '-b:a', '192k',
+    '-t', String(audioDuration),
+  );
+}
+
 (async () => {
   fs.rmSync(framesDir, { recursive: true, force: true });
   fs.mkdirSync(framesDir, { recursive: true });
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
   const browser = await chromium.launch();
+  let audioCues = [];
   try {
     const page = await browser.newPage({
       viewport: { width: 800, height: 1400 },
@@ -58,6 +139,7 @@ const framesDir = path.resolve('frames');
     await page.goto(pathToFileURL(inputPath).href);
     await page.addStyleTag({ content: '#fr{border-radius:0!important;transition:none!important}' });
     await page.evaluate(() => document.fonts.ready);
+    audioCues = await page.evaluate(() => window.RENDER_AUDIO_CUES ?? []);
     await page.waitForTimeout(1500);
 
     if (theme === 'light' && await page.$('[data-t="1"]')) {
@@ -91,17 +173,22 @@ const framesDir = path.resolve('frames');
     await browser.close();
   }
 
-  execFileSync('ffmpeg', [
+  const total = Math.round(duration * fps);
+  const ffmpegArgs = [
     '-y',
     '-framerate', String(fps),
     '-i', path.join(framesDir, 'f%05d.png'),
+  ];
+  addAudioOutput(ffmpegArgs, audioCues, total / fps);
+  ffmpegArgs.push(
     '-c:v', 'libx264',
     '-preset', 'slow',
     '-crf', '14',
     '-pix_fmt', 'yuv420p',
     '-movflags', '+faststart',
     outputPath,
-  ], { stdio: 'inherit' });
+  );
+  execFileSync('ffmpeg', ffmpegArgs, { stdio: 'inherit' });
   console.log('Done:', outputPath);
 })().catch(error => {
   console.error(error);

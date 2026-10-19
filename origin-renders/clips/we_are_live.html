@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Origin Media · We Are Live</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat:wght@500;700;800&display=swap');
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#161616;color:#ddd;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px}
+button{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid #3a3a3a;background:#222;color:#ddd;cursor:pointer}
+button:hover{border-color:#E8692D;color:#fff}
+.ctl{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:12px}
+#tm{font-size:13px;color:#999;min-width:80px}
+.fr{--fg:#F5F1EA;--muted:#8a847c;--orange:#E8692D;position:relative;width:360px;height:640px;background:#070707;color:var(--fg);overflow:hidden;border-radius:12px;flex:none}
+.glow{position:absolute;inset:-25%;background:radial-gradient(ellipse at 50% 48%,rgba(232,105,45,.16),transparent 48%);opacity:0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,241,234,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(245,241,234,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(transparent,black 25%,black 75%,transparent)}
+.frame{position:absolute;inset:18px;border:1px solid rgba(245,241,234,.14);pointer-events:none;opacity:0}
+.eyebrow{position:absolute;top:64px;left:0;right:0;text-align:center;font:500 10px/1 Montserrat,sans-serif;letter-spacing:.36em;color:var(--muted);opacity:0}
+.count{position:absolute;inset:0;display:grid;place-items:center;opacity:0}
+.dial{position:absolute;width:242px;height:242px}
+.dial circle{fill:none;stroke:rgba(245,241,234,.13);stroke-width:1}
+.dial .progress{stroke:var(--orange);stroke-width:2;stroke-linecap:round;stroke-dasharray:565.49;stroke-dashoffset:565.49;transform:rotate(-90deg);transform-origin:50% 50%}
+.ticks{position:absolute;inset:0}
+.ticks i{position:absolute;left:50%;top:50%;width:1px;height:8px;background:rgba(245,241,234,.42);transform-origin:0 0}
+.ticks i:nth-child(odd){height:12px;background:var(--orange)}
+.num{position:relative;font:800 136px/.9 Montserrat,sans-serif;letter-spacing:-.09em;padding-right:.09em}
+.num span{display:block}
+.label{position:absolute;top:calc(50% + 132px);font:500 10px/1 Montserrat,sans-serif;letter-spacing:.32em;color:var(--muted)}
+.live{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0}
+.wave{position:absolute;width:286px;height:286px;border:1px solid rgba(232,105,45,.5);border-radius:50%;opacity:0;pointer-events:none}
+.wave:last-child{width:316px;height:316px;border-color:rgba(232,105,45,.2)}
+.live-tag{display:flex;align-items:center;gap:8px;margin-bottom:20px;font:700 10px/1 Montserrat,sans-serif;letter-spacing:.34em;color:var(--orange)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange)}
+.live h1{margin:0;text-align:center;font:800 43px/.98 Montserrat,sans-serif;letter-spacing:-.075em}
+.live h1 span{display:block}
+.live h1 span:last-child{color:var(--orange)}
+.live-note{margin-top:22px;font:500 11px/1 Cormorant Garamond,serif;letter-spacing:.16em;color:var(--muted)}
+.brand{position:absolute;left:0;right:0;top:50%;display:flex;flex-direction:column;align-items:center;opacity:0;transform:translateY(-36%) scale(.8)}
+.wordmark{display:flex;align-items:center;height:82px;font:800 76px/.9 Montserrat,sans-serif;letter-spacing:-.075em}
+.mark{width:62px;height:62px;margin-right:-2px;overflow:visible}
+.mark .arm{stroke:var(--orange);stroke-width:10;stroke-linecap:square}
+.mark .ring{fill:none;stroke:var(--fg);stroke-width:16;stroke-dasharray:114;stroke-dashoffset:114}
+.brand-media{align-self:flex-end;margin:-3px 2px 0 0;font:500 19px/.9 Montserrat,sans-serif;letter-spacing:.04em;opacity:0}
+.brand-rule{width:0;height:1px;margin-top:30px;background:var(--orange)}
+.brand-line{margin-top:16px;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.25em;color:var(--muted);opacity:0}
+.spark{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--fg);opacity:0}
+.flash{position:absolute;inset:0;background:var(--fg);opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="fr" id="fr">
+  <div class="glow" id="glow"></div>
+  <div class="grid"></div>
+  <div class="frame" id="frame"></div>
+  <div class="eyebrow" id="eyebrow">THE MOMENT IS HERE</div>
+  <div class="count" id="count">
+    <svg class="dial" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="90"/>
+      <circle class="progress" id="progress" cx="100" cy="100" r="90"/>
+    </svg>
+    <div class="ticks" id="ticks"></div>
+    <div class="num"><span id="num">3</span></div>
+    <div class="label">GET READY</div>
+  </div>
+  <div class="live" id="live">
+    <i class="wave" id="wave1"></i>
+    <i class="wave" id="wave2"></i>
+    <div class="live-tag"><span class="dot"></span>ON AIR</div>
+    <h1><span>WE ARE</span><span>LIVE</span></h1>
+    <div class="live-note">A NEW STORY STARTS NOW</div>
+  </div>
+  <div class="brand" id="brand">
+    <div class="wordmark">
+      <svg class="mark" viewBox="8 8 84 84" aria-hidden="true">
+        <line class="arm" x1="29.2" y1="38" x2="15.4" y2="30"/>
+        <line class="arm" x1="26" y1="50" x2="10" y2="50"/>
+        <line class="arm" x1="29.2" y1="62" x2="15.4" y2="70"/>
+        <path class="ring" id="ring" d="M42 20.1 A31 31 0 1 1 42 79.9"/>
+      </svg>
+      <span>rigin</span>
+    </div>
+    <div class="brand-media" id="media">media</div>
+    <div class="brand-rule" id="rule"></div>
+    <div class="brand-line" id="brandLine">ORIGINATE SOMETHING GREAT</div>
+  </div>
+  <div class="flash" id="flash"></div>
+</div>
+<div class="ctl"><button id="rp">Replay</button><span id="tm">0.0 / 12s</span></div>
+<script>
+const $=id=>document.getElementById(id);
+const fr=$('fr'),progress=$('progress'),num=$('num'),ring=$('ring'),tmEl=$('tm');
+const animations=[];
+const sparks=[];
+for(let i=0;i<48;i++){
+  const spark=document.createElement('i');
+  spark.className='spark';
+  const x=(i*73+19)%340+10,y=(i*137+47)%620+10,size=i%7===0?3:2;
+  spark.style.cssText=`left:${x}px;top:${y}px;width:${size}px;height:${size}px`;
+  fr.appendChild(spark);
+  sparks.push({el:spark,phase:(i*0.61803398875)%1});
+}
+for(let i=0;i<48;i++){
+  const tick=document.createElement('i');
+  tick.style.transform=`rotate(${i*7.5}deg) translateY(-113px)`;
+  $('ticks').appendChild(tick);
+}
+function animate(el,keyframes,options){
+  const animation=el.animate(keyframes,{fill:'both',...options});
+  animations.push(animation);
+  return animation;
+}
+const ease='cubic-bezier(.2,.8,.2,1)',spring='cubic-bezier(.2,1.4,.4,1)';
+let start=0;
+function play(){
+  animations.forEach(animation=>animation.cancel());
+  animations.length=0;
+  progress.style.strokeDashoffset='565.49';
+  ring.style.strokeDashoffset='114';
+  animate($('frame'),[{opacity:0},{opacity:1}],{duration:700,delay:100});
+  animate($('glow'),[{opacity:0},{opacity:1}],{duration:1200,delay:100,easing:ease});
+  animate($('eyebrow'),[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:600,delay:250,easing:ease});
+  animate($('count'),[{opacity:0,transform:'scale(.9)'},{opacity:1,transform:'none'}],{duration:700,delay:500,easing:spring});
+  animate($('count'),[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.78)'}],{duration:450,delay:3450,easing:ease});
+  animate($('eyebrow'),[{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-8px)'}],{duration:350,delay:3450,easing:ease});
+  animate(progress,[{strokeDashoffset:565.49},{strokeDashoffset:0}],{duration:3600,delay:500,easing:'linear'});
+  animate($('live'),[{opacity:0,filter:'blur(14px)',transform:'scale(.84)'},{opacity:1,filter:'blur(0px)',transform:'scale(1)',offset:.72},{opacity:1,filter:'blur(0px)',transform:'scale(1.04)'},{opacity:0,filter:'blur(8px)',transform:'scale(1.12)'}],{duration:3100,delay:3900,easing:ease});
+  animate($('wave1'),[{opacity:0,transform:'scale(.55)'},{opacity:.7,offset:.18},{opacity:0,transform:'scale(1.2)'}],{duration:1300,delay:3900,easing:'ease-out'});
+  animate($('wave2'),[{opacity:0,transform:'scale(.55)'},{opacity:.4,offset:.18},{opacity:0,transform:'scale(1.2)'}],{duration:1500,delay:4000,easing:'ease-out'});
+  animate($('brand'),[{opacity:0,transform:'translateY(-36%) scale(.74)',filter:'blur(14px)'},{opacity:1,transform:'translateY(-50%) scale(1)',filter:'blur(0px)'}],{duration:1200,delay:7400,easing:spring});
+  animate(ring,[{strokeDashoffset:114},{strokeDashoffset:0}],{duration:700,delay:7600,easing:ease});
+  animate($('media'),[{opacity:0,transform:'translateX(12px)'},{opacity:1,transform:'none'}],{duration:500,delay:8200,easing:ease});
+  animate($('rule'),[{width:'0px'},{width:'88px'}],{duration:700,delay:8600,easing:ease});
+  animate($('brandLine'),[{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'none'}],{duration:600,delay:8950,easing:ease});
+  animate($('flash'),[{opacity:0},{opacity:.72,offset:.12},{opacity:0}],{duration:500,delay:3850,easing:'ease-out'});
+  start=performance.now();
+}
+function update(now){
+  if(start){
+    const seconds=Math.min(12,(now-start)/1000);
+    num.textContent=seconds<1.2?'3':seconds<2.4?'2':seconds<3.6?'1':'';
+    for(const spark of sparks){
+      const visible=seconds>3.5&&seconds<7.5;
+      const twinkle=.5+.5*Math.sin(seconds*4+spark.phase*20);
+      spark.el.style.opacity=visible?(twinkle*.7).toFixed(2):'0';
+      spark.el.style.transform=`scale(${(.6+twinkle*1.4).toFixed(2)})`;
+    }
+    tmEl.textContent=`${seconds.toFixed(1)} / 12s`;
+  }
+  requestAnimationFrame(update);
+}
+$('rp').addEventListener('click',play);
+Promise.all([
+  document.fonts.load('800 76px Montserrat'),
+  document.fonts.load('800 43px Montserrat'),
+  document.fonts.load('500 11px Montserrat'),
+  document.fonts.load('500 11px "Cormorant Garamond"')
+]).catch(error=>console.error('Unable to load animation fonts:',error)).then(()=>{
+  play();
+  requestAnimationFrame(update);
+});
+</script>
+</body>
+</html>
