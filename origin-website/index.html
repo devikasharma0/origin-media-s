@@ -25,6 +25,7 @@
     }
   </script>
   <script type="module" src="main.js"></script>
+  <script type="module" src="scenes.js"></script>
   <script src="site.js" defer></script>
 </head>
 <body>
@@ -67,6 +68,7 @@
     </section>
 
     <!-- SERVICES -->
+        <!-- SERVICES -->
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-head">
@@ -74,57 +76,61 @@
           <p>Three ways to work with us. Each one starts with your story.</p>
         </div>
 
-        <div class="service-list">
-          <details class="service" open>
-            <summary>
-              <h3>Social media for brands</h3>
-              <span class="sum">Your channels planned, created and run with one clear voice.</span>
-              <span class="toggle" aria-hidden="true"></span>
-            </summary>
-            <div class="service-body">
-              <p>We become your social team. We find what makes your brand worth following, then show up for you every week with content people actually stop for.</p>
-              <ul>
-                <li>Content strategy and monthly calendar</li>
-                <li>Reels, carousels and stories</li>
-                <li>Community management</li>
-                <li>Monthly reporting and planning</li>
-              </ul>
-            </div>
-          </details>
+        <div class="services-layout">
+          <div class="service-list">
+            <details class="service" name="services" open>
+              <summary>
+                <h3>Social media for brands</h3>
+                <span class="sum">Your channels planned, created and run with one clear voice.</span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="service-body">
+                <p>We become your social team. We find what makes your brand worth following, then show up for you every week with content people actually stop for.</p>
+                <ul>
+                  <li>Content strategy and monthly calendar</li>
+                  <li>Reels, carousels and stories</li>
+                  <li>Community management</li>
+                  <li>Monthly reporting and planning</li>
+                </ul>
+              </div>
+            </details>
 
-          <details class="service">
-            <summary>
-              <h3>Personal brands</h3>
-              <span class="sum">For founders, creators and professionals who want to be known for what they believe.</span>
-              <span class="toggle" aria-hidden="true"></span>
-            </summary>
-            <div class="service-body">
-              <p>People trust people. We help you find your voice, shape your story and turn it into content that builds authority without feeling forced.</p>
-              <ul>
-                <li>Positioning and voice</li>
-                <li>Scripting and shoot days</li>
-                <li>Instagram and LinkedIn growth</li>
-                <li>Founder-led content for your brand</li>
-              </ul>
-            </div>
-          </details>
+            <details class="service" name="services">
+              <summary>
+                <h3>Personal brands</h3>
+                <span class="sum">For founders, creators and professionals who want to be known for what they believe.</span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="service-body">
+                <p>People trust people. We help you find your voice, shape your story and turn it into content that builds authority without feeling forced.</p>
+                <ul>
+                  <li>Positioning and voice</li>
+                  <li>Scripting and shoot days</li>
+                  <li>Instagram and LinkedIn growth</li>
+                  <li>Founder-led content for your brand</li>
+                </ul>
+              </div>
+            </details>
 
-          <details class="service">
-            <summary>
-              <h3>Campaigns</h3>
-              <span class="sum">Launches, festive moments and big announcements, planned end to end.</span>
-              <span class="toggle" aria-hidden="true"></span>
-            </summary>
-            <div class="service-body">
-              <p>When a moment matters, we build the idea, make the content and get it in front of the right people, so it's remembered long after it runs.</p>
-              <ul>
-                <li>Campaign idea and script</li>
-                <li>Shoots and production</li>
-                <li>Paid social</li>
-                <li>Creator and influencer collaborations</li>
-              </ul>
-            </div>
-          </details>
+            <details class="service" name="services">
+              <summary>
+                <h3>Campaigns</h3>
+                <span class="sum">Launches, festive moments and big announcements, planned end to end.</span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="service-body">
+                <p>When a moment matters, we build the idea, make the content and get it in front of the right people, so it's remembered long after it runs.</p>
+                <ul>
+                  <li>Campaign idea and script</li>
+                  <li>Shoots and production</li>
+                  <li>Paid social</li>
+                  <li>Creator and influencer collaborations</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="services-visual" aria-hidden="true"><canvas id="services3d"></canvas></div>
         </div>
       </div>
     </section>
@@ -168,6 +174,7 @@
     <!-- CONTACT -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
+        <canvas id="contact3d" aria-hidden="true"></canvas>
         <h2 id="contact-title" class="contact-title">Tell us where your brand began.</h2>
         <p class="lead">Share a few lines about your brand or yourself. We reply within one working day.</p>
         <ul class="contact-links">
