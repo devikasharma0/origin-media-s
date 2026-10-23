@@ -21,7 +21,10 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
 body { background: var(--ink); color: var(--paper); font-family: var(--font); font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -57,7 +60,7 @@ a { color: inherit; }
 .site-header .btn { min-height: 40px; padding: 0 1.1rem; font-size: .9rem; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; height: 190vh; }
+.hero { position: relative; height: 230vh; }
 .hero-pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; align-items: end; }
 #mark3d { position: absolute; top: 0; right: 0; width: 60%; height: 100%; opacity: 0; transition: opacity 1.2s ease; }
 #mark3d.ready { opacity: 1; }
