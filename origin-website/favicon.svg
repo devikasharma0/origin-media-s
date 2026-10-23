@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 92 92">
+  <style>
+    .arc { stroke: #070707; }
+    @media (prefers-color-scheme: dark) { .arc { stroke: #F3EFE8; } }
+  </style>
+  <g stroke="#E8692D" stroke-width="11">
+    <line x1="29.2" y1="38" x2="15.4" y2="30"/>
+    <line x1="26" y1="50" x2="10" y2="50"/>
+    <line x1="29.2" y1="62" x2="15.4" y2="70"/>
+  </g>
+  <path class="arc" d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke-width="18"/>
+</svg>
