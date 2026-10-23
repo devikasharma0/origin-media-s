@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Origin Media · Day 2 · Untold (Reel 1080x1920)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Great+Vibes&family=Montserrat:wght@500;800&display=swap');
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#161616;color:#ddd;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px}
+button{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid #3a3a3a;background:#222;color:#ddd;cursor:pointer}
+button.on{border-color:#E8692D;color:#fff}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:12px;max-width:560px}
+#tm{font-size:13px;color:#999;min-width:80px}
+.fr{--bg:#050505;--fg:#F5F1EA;--mu:#8a847c;--ln:rgba(245,241,234,.14);position:relative;width:360px;height:640px;background:var(--bg);overflow:hidden;border-radius:12px;flex:none}
+.fr.lt{--bg:#FAF7F2;--fg:#0B0B0B;--mu:#7a746c;--ln:rgba(11,11,11,.14)}
+.bd{position:absolute;inset:16px;border:1px solid var(--ln);opacity:0;pointer-events:none}
+.ctr{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:120px;pointer-events:none}
+.wm{display:flex;flex-direction:column;font-family:'Montserrat',sans-serif;font-weight:800;color:var(--fg);font-size:84px;line-height:1;letter-spacing:-.01em}
+.r1{display:flex;align-items:baseline}
+.mk{width:.56em;height:.56em;margin-right:.03em;flex:none;overflow:visible}
+.seg{transform-box:fill-box;transform-origin:center;opacity:0}
+.arc{stroke:var(--fg)}
+.l{display:inline-block;opacity:0}.i{position:relative}
+.tt{position:absolute;left:50%;top:.12em;width:.17em;height:.17em;margin-left:-.085em;background:#E8692D}
+.md{align-self:flex-end;font-size:.3em;margin-top:-.15em;letter-spacing:0;opacity:0}
+.el{position:absolute;left:0;right:0;text-align:center;opacity:0}
+.blk{position:absolute;left:0;right:0;text-align:center}
+.mw{overflow:hidden;padding:.08em 0 .2em;margin:-.08em 0 -.2em}
+.mi{display:block;transform:translateY(140%)}
+.sr{font-family:'Cormorant Garamond',serif;color:var(--fg);font-weight:500;line-height:1.08}
+.sc{font-family:'Great Vibes',cursive;color:#E8692D;line-height:1}
+.cp{font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.3em;font-size:11px;line-height:16px;color:var(--fg)}
+.hdl{font-family:'Montserrat',sans-serif;font-weight:500;color:#E8692D;font-size:13px;letter-spacing:.04em}
+.ru{height:1px;background:#E8692D;width:60px;margin:14px auto 0}
+.ut{position:relative;display:inline-block}
+.utx{opacity:0}
+.rb{position:absolute;left:-10px;right:-10px;top:24%;bottom:6%;background:var(--fg);transform:scaleX(0);transform-origin:left center}
+.ul{height:1.5px;background:#E8692D;width:0;margin:4px auto 0}
+.pg{position:absolute;left:90px;top:410px;height:1.5px;width:0;background:#E8692D;opacity:0}
+</style>
+</head>
+<body>
+<div class="fr" id="fr">
+  <div class="bd" id="bd"></div>
+
+  <!-- Beat 1: hook -->
+  <div class="blk" id="b1" style="top:232px">
+    <div class="mw"><div class="mi sr" style="font-size:54px">Your brand</div></div>
+    <div class="mw"><div class="mi sr" style="font-size:54px">isn't boring.</div></div>
+  </div>
+
+  <!-- Beat 2: It's just untold -->
+  <div class="blk" id="b2">
+    <div style="position:absolute;left:0;right:0;top:205px"><div class="mw"><div class="mi sr" style="font-size:48px">It's just</div></div></div>
+    <div style="position:absolute;left:0;right:0;top:262px"><span class="ut"><span class="sc utx" id="utx" style="font-size:100px">untold.</span><i class="rb" id="rb"></i></span><div class="ul" id="ul"></div></div>
+  </div>
+
+  <!-- Beat 3: relatable flashes -->
+  <div class="el f3" style="top:262px"><div class="cp" style="color:#E8692D;margin-bottom:12px">01</div><div class="sr" style="font-size:44px">The late nights.</div></div>
+  <div class="el f3" style="top:262px"><div class="cp" style="color:#E8692D;margin-bottom:12px">02</div><div class="sr" style="font-size:44px">The first customer.</div></div>
+  <div class="el f3" style="top:248px"><div class="cp" style="color:#E8692D;margin-bottom:12px">03</div><div class="sr" style="font-size:44px">The reason<br>you started.</div></div>
+  <div class="pg" id="pg"></div>
+
+  <!-- Beat 4: payoff -->
+  <div class="blk" id="b4" style="top:238px">
+    <div class="mw"><div class="mi sr" style="font-size:44px">That's your story.</div></div>
+    <div class="mw"><div class="mi sc" style="font-size:74px">We tell it.</div></div>
+  </div>
+
+  <!-- End card -->
+  <div class="ctr"><div class="wm"><div class="r1"><svg class="mk" id="mk" viewBox="8 8 84 84" aria-hidden="true"><line class="seg" x1="29.2" y1="38" x2="15.4" y2="30" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="26" y1="50" x2="10" y2="50" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="29.2" y1="62" x2="15.4" y2="70" stroke="#E8692D" stroke-width="11"/><path class="arc" id="arc" d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke-width="18" stroke-dasharray="114" stroke-dashoffset="114"/></svg><span class="l">r</span><span class="l i">ı<b class="tt"></b></span><span class="l">g</span><span class="l i">ı<b class="tt"></b></span><span class="l">n</span></div><div class="md" id="md">media</div></div></div>
+  <div class="el" id="tl" style="top:350px"><div class="sr" id="t1" style="font-size:26px"></div><div class="sc" id="t2" style="margin-top:6px"></div><div class="ru" id="ru"></div></div>
+  <div class="el" id="hd" style="top:470px"><div class="hdl">@originmedia.ind</div></div>
+</div>
+<div class="ctl" id="thm"><button data-t="0" class="on">Dark theme</button><button data-t="1">Light theme</button></div>
+<div class="ctl" id="tgs"></div>
+<div class="ctl"><button id="rp">Replay</button><span id="tm">0.0 / 15s</span></div>
+<script>
+const $=id=>document.getElementById(id);
+let onTheme=null,frameUpd=null,TI=0,A=[],st=0;
+const fr=$('fr'),mk=$('mk'),arc=$('arc'),md=$('md'),tl=$('tl'),t1=$('t1'),t2=$('t2'),ru=$('ru'),hd=$('hd'),tmEl=$('tm');
+const segs=[...document.querySelectorAll('.seg')],ls=[...document.querySelectorAll('.l')],tts=[...document.querySelectorAll('.tt')];
+const TAG=[['Every great brand has an','origin.',50],['Where great brands','begin.',56],['Stories worth','the scroll.',52],['Built to be','remembered.',50],['Rooted in story.','Built to move.',46]];
+function setTag(){t1.textContent=TAG[TI][0];t2.textContent=TAG[TI][1];t2.style.fontSize=TAG[TI][2]+'px';}
+const tg=$('tgs');TAG.forEach((x,i)=>{const b=document.createElement('button');b.textContent=x[0]+' '+x[1];if(i===TI)b.className='on';b.onclick=()=>{TI=i;[...tg.children].forEach(c=>c.classList.toggle('on',c===b));setTag();};tg.appendChild(b);});setTag();
+document.querySelectorAll('#thm button').forEach(b=>b.onclick=()=>{fr.classList.toggle('lt',b.dataset.t==='1');document.querySelectorAll('#thm button').forEach(x=>x.classList.toggle('on',x===b));if(onTheme)onTheme();});
+function an(el,kf,o){const a=el.animate(kf,Object.assign({fill:'both',easing:'ease'},o));A.push(a);return a;}
+const SP='cubic-bezier(.3,1.6,.5,1)',EZ='cubic-bezier(.6,0,.2,1)',FO='cubic-bezier(.2,.8,.2,1)';
+const UP=[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}];
+const OUT=[{opacity:1,filter:'blur(0px)',transform:'none'},{opacity:0,filter:'blur(8px)',transform:'translateY(-10px)'}];
+function endCard(E){
+  const fR=fr.getBoundingClientRect(),m=mk.getBoundingClientRect();
+  const dx=fR.left+180-(m.left+m.width/2),dy=fR.top+260-(m.top+m.height/2),T0='translate('+dx+'px,'+dy+'px) scale(2.6)';
+  segs.forEach((s,i)=>an(s,[{opacity:0,transform:'scale(.3)'},{opacity:1,transform:'scale(1)'}],{duration:420,delay:E+i*110,easing:SP}));
+  an(arc,[{strokeDashoffset:114},{strokeDashoffset:0}],{duration:750,delay:E+100,easing:'ease-out'});
+  an(mk,[{transform:T0,offset:0},{transform:T0,offset:.55,easing:EZ},{transform:'none',offset:1}],{duration:1800,delay:E,easing:'linear'});
+  ls.forEach((l,i)=>an(l,[{opacity:0,transform:'translateX(-.15em)'},{opacity:1,transform:'none'}],{duration:420,delay:E+1350+i*60}));
+  tts.forEach((x,i)=>an(x,[{opacity:0,transform:'translateY(-.4em) scale(.4)'},{opacity:1,transform:'none'}],{duration:420,delay:E+1850+i*130,easing:SP}));
+  an(md,[{opacity:0,transform:'translateX(.4em)'},{opacity:1,transform:'none'}],{duration:450,delay:E+2050});
+  an(tl,UP,{duration:700,delay:E+2550});
+  an(ru,[{width:'0px'},{width:'60px'}],{duration:600,delay:E+3000});
+  an(hd,UP,{duration:600,delay:E+3250});
+}
+const bd=$('bd'),b1=$('b1'),b2=$('b2'),b4=$('b4'),utx=$('utx'),rb=$('rb'),ul=$('ul'),pg=$('pg');
+const m1=[...document.querySelectorAll('#b1 .mi')],m2=[...document.querySelectorAll('#b2 .mi')],m4=[...document.querySelectorAll('#b4 .mi')],f3=[...document.querySelectorAll('.f3')];
+function play(){
+  A.forEach(x=>x.cancel());A=[];
+  an(bd,[{opacity:0},{opacity:1}],{duration:800,delay:100});
+  // Beat 1 — hook (visible within the first second)
+  m1.forEach((e,i)=>an(e,[{transform:'translateY(140%)'},{transform:'none'}],{duration:700,delay:150+i*200,easing:FO}));
+  an(b1,OUT,{duration:450,delay:2900});
+  // Beat 2 — "It's just" + redaction reveal of "untold."
+  m2.forEach(e=>an(e,[{transform:'translateY(140%)'},{transform:'none'}],{duration:700,delay:3400,easing:FO}));
+  an(rb,[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:420,delay:3800,easing:EZ});
+  an(utx,[{opacity:0},{opacity:1}],{duration:1,delay:4250});
+  an(rb,[{transform:'scaleX(1)',transformOrigin:'right center'},{transform:'scaleX(0)',transformOrigin:'right center'}],{duration:650,delay:4700,easing:EZ,fill:'forwards'});
+  an(ul,[{width:'0px'},{width:'150px'}],{duration:600,delay:5300,easing:EZ});
+  an(b2,OUT,{duration:450,delay:6000});
+  // Beat 3 — relatable flashes
+  f3.forEach((e,i)=>{const t=6400+i*800;
+    an(e,[{opacity:0,transform:'translateY(16px) scale(.98)',filter:'blur(6px)'},{opacity:1,transform:'none',filter:'blur(0px)'}],{duration:350,delay:t,easing:FO});
+    an(e,[{opacity:1},{opacity:0}],{duration:220,delay:t+580,fill:'forwards'});});
+  an(pg,[{width:'0px',opacity:1},{width:'180px',opacity:1}],{duration:2400,delay:6400,easing:'linear'});
+  an(pg,[{opacity:1},{opacity:0}],{duration:250,delay:8800,fill:'forwards'});
+  // Beat 4 — payoff
+  m4.forEach((e,i)=>an(e,[{transform:'translateY(140%)'},{transform:'none'}],{duration:750,delay:9000+i*250,easing:FO}));
+  an(b4,OUT,{duration:450,delay:10400});
+  // End card
+  endCard(10800);
+  st=performance.now();
+}
+function tick(now){if(st){const s=Math.min(15,(now-st)/1000);if(frameUpd)frameUpd(s);tmEl.textContent=s.toFixed(1)+' / 15s';}requestAnimationFrame(tick);}
+$('rp').onclick=play;
+Promise.all([document.fonts.load('800 84px Montserrat'),document.fonts.load('500 11px Montserrat'),document.fonts.load('500 54px "Cormorant Garamond"'),document.fonts.load('100px "Great Vibes"')]).catch(()=>{}).then(()=>{play();requestAnimationFrame(tick);});
+</script>
+</body>
+</html>

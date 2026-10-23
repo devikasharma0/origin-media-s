@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Origin Media · Service Roll Call</title>
+<title>Origin Media · Leave These Behind Before 2027 (Reel 1080x1920)</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Great+Vibes&family=Montserrat:wght@500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Montserrat:wght@800&display=swap');
+@font-face{font-family:'II Increments Sans';font-weight:400;src:local('II Increments Sans Regular'),local('IIIncrementsSans-Regular'),url('fonts/IIIncrementsSans-Regular.otf')}
+@font-face{font-family:'II Increments Sans';font-weight:500;src:local('II Increments Sans Medium'),local('IIIncrementsSans-Medium'),url('fonts/IIIncrementsSans-Medium.otf')}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;background:#161616;color:#ddd;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px}
 button{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid #3a3a3a;background:#222;color:#ddd;cursor:pointer}
 button.on{border-color:#E8692D;color:#fff}
 .ctl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:12px;max-width:560px}
 #tm{font-size:13px;color:#999;min-width:80px}
-.fr{--bg:#050505;--fg:#F5F1EA;--mu:#8a847c;--ln:rgba(245,241,234,.14);position:relative;width:360px;height:640px;background:var(--bg);overflow:hidden;border-radius:12px;flex:none}
+.fr{--sans:'II Increments Sans','Inter Tight',sans-serif;--bg:#050505;--fg:#F5F1EA;--mu:#8a847c;--ln:rgba(245,241,234,.14);position:relative;width:360px;height:640px;background:var(--bg);overflow:hidden;border-radius:12px;flex:none;font-family:var(--sans)}
 .fr.lt{--bg:#FAF7F2;--fg:#0B0B0B;--mu:#7a746c;--ln:rgba(11,11,11,.14)}
 .bd{position:absolute;inset:16px;border:1px solid var(--ln);opacity:0;pointer-events:none}
-.ctr{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:80px;pointer-events:none}
+.ctr{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:120px;pointer-events:none}
 .wm{display:flex;flex-direction:column;font-family:'Montserrat',sans-serif;font-weight:800;color:var(--fg);font-size:84px;line-height:1;letter-spacing:-.01em}
 .r1{display:flex;align-items:baseline}
 .mk{width:.56em;height:.56em;margin-right:.03em;flex:none;overflow:visible}
@@ -25,30 +27,36 @@ button.on{border-color:#E8692D;color:#fff}
 .tt{position:absolute;left:50%;top:.12em;width:.17em;height:.17em;margin-left:-.085em;background:#E8692D}
 .md{align-self:flex-end;font-size:.3em;margin-top:-.15em;letter-spacing:0;opacity:0}
 .el{position:absolute;left:0;right:0;text-align:center;opacity:0}
-.sr{font-family:'Cormorant Garamond',serif;color:var(--fg);font-weight:500;line-height:1.08}
-.sc{font-family:'Great Vibes',cursive;color:#E8692D;line-height:1}
-.cp{font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.3em;font-size:11px;line-height:16px;color:var(--fg)}
-.hdl{font-family:'Montserrat',sans-serif;font-weight:500;color:#E8692D;font-size:13px;letter-spacing:.04em}
+.blk{position:absolute;left:0;right:0;text-align:center}
+.mw{overflow:hidden;padding:.06em 0 .14em;margin:-.06em 0 -.14em}
+.mi{display:block;transform:translateY(140%)}
+.hd{font-family:var(--sans);font-weight:500;color:var(--fg);letter-spacing:-.025em;line-height:1.05}
+.or{color:#E8692D}
+.lbl{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.3em;line-height:13px;text-transform:uppercase}
+.hdl{font-family:var(--sans);font-weight:500;color:#E8692D;font-size:13px;letter-spacing:.02em}
 .ru{height:1px;background:#E8692D;width:60px;margin:14px auto 0}
 .pn{position:absolute;left:12px;right:12px;top:176px;height:214px;background:#0d0d0d;border-radius:8px;opacity:0;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.ph1,.ph2{position:absolute;left:16px;top:14px;color:#E8692D}
+.ph2{opacity:0}
+.gate{position:absolute;right:14px;top:14px;color:#8a847c}
 .rws{position:absolute;inset:0;opacity:0;pointer-events:none}
 .rw{position:absolute;left:0;right:0;display:flex;justify-content:center;gap:2px}
-.tile{width:20px;height:30px;background:#161616;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:#F5F1EA;position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.tile{width:20px;height:30px;background:#161616;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;font-size:15px;color:#F5F1EA;position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
 .tile::after{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.75)}
+.sk{position:absolute;left:16px;height:2px;width:0;background:#E8692D}
 </style>
 </head>
 <body>
 <div class="fr" id="fr">
   <div class="bd" id="bd"></div>
-  <div class="pn" id="pn">
-    <div class="cp" style="position:absolute;left:16px;top:14px;color:#E8692D">NOW BOARDING</div>
-    <div class="cp" style="position:absolute;right:12px;top:14px;color:#8a847c">GATE 01</div>
-  </div>
+  <div class="el" id="ti1" style="top:110px"><div class="hd" style="font-size:22px">Leave these behind</div><div class="hd or" style="font-size:22px">before 2027.</div></div>
+  <div class="el" id="ti2" style="top:110px"><div class="hd" style="font-size:22px">Take these</div><div class="hd or" style="font-size:22px">with you instead.</div></div>
+  <div class="pn" id="pn"><div class="lbl ph1" id="ph1">Leave behind</div><div class="lbl ph2" id="ph2">Take with you</div><div class="lbl gate">Gate 2027</div></div>
   <div class="rws" id="rws"></div>
-  <div class="el" id="ao" style="top:228px"><div class="sr" style="font-size:46px">All from one</div><div class="sc" style="font-size:76px;margin-top:4px">origin.</div></div>
+  <div class="blk" id="po" style="top:228px"><div class="mw"><div class="mi hd" style="font-size:46px">Less noise.</div></div><div class="mw"><div class="mi hd or" style="font-size:46px">More story.</div></div></div>
   <div class="ctr"><div class="wm"><div class="r1"><svg class="mk" id="mk" viewBox="8 8 84 84" aria-hidden="true"><line class="seg" x1="29.2" y1="38" x2="15.4" y2="30" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="26" y1="50" x2="10" y2="50" stroke="#E8692D" stroke-width="11"/><line class="seg" x1="29.2" y1="62" x2="15.4" y2="70" stroke="#E8692D" stroke-width="11"/><path class="arc" id="arc" d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke-width="18" stroke-dasharray="114" stroke-dashoffset="114"/></svg><span class="l">r</span><span class="l i">ı<b class="tt"></b></span><span class="l">g</span><span class="l i">ı<b class="tt"></b></span><span class="l">n</span></div><div class="md" id="md">media</div></div></div>
-  <div class="el" id="tl" style="top:390px"><div class="sr" id="t1" style="font-size:26px"></div><div class="sc" id="t2" style="margin-top:6px"></div><div class="ru" id="ru"></div></div>
-  <div class="el" id="hd" style="top:572px"><div class="hdl">@originmedia.ind</div></div>
+  <div class="el" id="tl" style="top:350px"><div class="hd" id="t1" style="font-size:18px"></div><div class="hd or" id="t2" style="margin-top:4px"></div><div class="ru" id="ru"></div></div>
+  <div class="el" id="hd" style="top:470px"><div class="hdl">@originmedia.ind</div></div>
 </div>
 <div class="ctl" id="thm"><button data-t="0" class="on">Dark theme</button><button data-t="1">Light theme</button></div>
 <div class="ctl" id="tgs"></div>
@@ -58,16 +66,17 @@ const $=id=>document.getElementById(id);
 let onTheme=null,frameUpd=null,TI=0,A=[],st=0;
 const fr=$('fr'),mk=$('mk'),arc=$('arc'),md=$('md'),tl=$('tl'),t1=$('t1'),t2=$('t2'),ru=$('ru'),hd=$('hd'),tmEl=$('tm');
 const segs=[...document.querySelectorAll('.seg')],ls=[...document.querySelectorAll('.l')],tts=[...document.querySelectorAll('.tt')];
-const TAG=[['Every great brand has an','origin.',50],['Where great brands','begin.',56],['Stories worth','the scroll.',52],['Built to be','remembered.',50],['Rooted in story.','Built to move.',46]];
+const TAG=[['Every great brand has an','origin.',34],['Where great brands','begin.',34],['Stories worth','the scroll.',34],['Built to be','remembered.',34],['Rooted in story.','Built to move.',30]];
 function setTag(){t1.textContent=TAG[TI][0];t2.textContent=TAG[TI][1];t2.style.fontSize=TAG[TI][2]+'px';}
 const tg=$('tgs');TAG.forEach((x,i)=>{const b=document.createElement('button');b.textContent=x[0]+' '+x[1];if(i===TI)b.className='on';b.onclick=()=>{TI=i;[...tg.children].forEach(c=>c.classList.toggle('on',c===b));setTag();};tg.appendChild(b);});setTag();
 document.querySelectorAll('#thm button').forEach(b=>b.onclick=()=>{fr.classList.toggle('lt',b.dataset.t==='1');document.querySelectorAll('#thm button').forEach(x=>x.classList.toggle('on',x===b));if(onTheme)onTheme();});
 function an(el,kf,o){const a=el.animate(kf,Object.assign({fill:'both',easing:'ease'},o));A.push(a);return a;}
 const SP='cubic-bezier(.3,1.6,.5,1)',EZ='cubic-bezier(.6,0,.2,1)',FO='cubic-bezier(.2,.8,.2,1)';
 const UP=[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}];
+const OUT=[{opacity:1,filter:'blur(0px)',transform:'none'},{opacity:0,filter:'blur(8px)',transform:'translateY(-10px)'}];
 function endCard(E){
   const fR=fr.getBoundingClientRect(),m=mk.getBoundingClientRect();
-  const dx=fR.left+180-(m.left+m.width/2),dy=fR.top+300-(m.top+m.height/2),T0='translate('+dx+'px,'+dy+'px) scale(2.6)';
+  const dx=fR.left+180-(m.left+m.width/2),dy=fR.top+260-(m.top+m.height/2),T0='translate('+dx+'px,'+dy+'px) scale(2.6)';
   segs.forEach((s,i)=>an(s,[{opacity:0,transform:'scale(.3)'},{opacity:1,transform:'scale(1)'}],{duration:420,delay:E+i*110,easing:SP}));
   an(arc,[{strokeDashoffset:114},{strokeDashoffset:0}],{duration:750,delay:E+100,easing:'ease-out'});
   an(mk,[{transform:T0,offset:0},{transform:T0,offset:.55,easing:EZ},{transform:'none',offset:1}],{duration:1800,delay:E,easing:'linear'});
@@ -78,23 +87,25 @@ function endCard(E){
   an(ru,[{width:'0px'},{width:'60px'}],{duration:600,delay:E+3000});
   an(hd,UP,{duration:600,delay:E+3250});
 }
-// ---- Edit your services here (max 15 characters each) ----
-const SERV=['BRAND FILMS','SOCIAL STRATEGY','CAMPAIGNS','CONTENT'];
-const FIN=['','YOUR BRAND','IS NEXT.',''];
-const TR=[.8,1.8,2.8,3.8],TF=5.4,NC=15,AZ='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-const bd=$('bd'),pn=$('pn'),rws=$('rws'),ao=$('ao'),tiles=[];
-for(let r=0;r<4;r++){const row=document.createElement('div');row.className='rw';row.style.top=(216+r*40)+'px';const arr=[];for(let c=0;c<NC;c++){const t=document.createElement('div');t.className='tile';row.appendChild(t);arr.push(t);}rws.appendChild(row);tiles.push(arr);}
+// ---- Content (max 15 characters per row). Timings are synced to the audio, so keep them as they are. ----
+const DEP=['RANDOM POSTING','CHASING TRENDS','HARD SELLING','HIDDEN FOUNDER'];
+const ARR=['A CLEAR VOICE','3 CORE PILLARS','STORIES > SPECS','FOUNDER-LED'];
+const D=[.5,1.5,2.5,3.5],ST=[4,4.25,4.5,4.75],AR=[5.5,6,6.5,7],NC=15,AZ='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const bd=$('bd'),pn=$('pn'),rws=$('rws'),ti1=$('ti1'),ti2=$('ti2'),ph1=$('ph1'),ph2=$('ph2'),po=$('po');
+const pol=[...document.querySelectorAll('#po .mi')],tiles=[],rows=[],sks=[];
+for(let r=0;r<4;r++){const top=216+r*40;const row=document.createElement('div');row.className='rw';row.style.top=top+'px';const arr=[];for(let c=0;c<NC;c++){const t=document.createElement('div');t.className='tile';row.appendChild(t);arr.push(t);}rws.appendChild(row);tiles.push(arr);rows.push(row);const sk=document.createElement('div');sk.className='sk';sk.style.top=(top+14)+'px';rws.appendChild(sk);sks.push(sk);}
 const pad=w=>{const l=Math.floor((NC-w.length)/2);return (' '.repeat(l)+w).padEnd(NC,' ');};
 frameUpd=function(s){
   for(let r=0;r<4;r++){
-    const tf=TF+r*.12;let txt,t0,fin;
-    if(s<tf){if(s<TR[r]){txt='';t0=-9;}else{txt=SERV[r];t0=TR[r];}fin=false;}else{txt=FIN[r];t0=tf;fin=true;}
+    let txt,t0,arv;
+    if(s<D[r]){txt='';t0=-9;arv=false;}else if(s<AR[r]){txt=DEP[r];t0=D[r];arv=false;}else{txt=ARR[r];t0=AR[r];arv=true;}
+    rows[r].style.opacity=(!arv&&s>ST[r]+.35)?'.4':'1';
     const tgt=pad(txt),dt=s-t0;
     for(let c=0;c<NC;c++){
       const el=tiles[r][c],se=.12+c*.03,flip=t0>0&&dt>=0&&dt<se;
       let ch=tgt[c];if(flip)ch=AZ[Math.floor(Math.random()*AZ.length)];
       el.textContent=ch===' '?'':ch;
-      el.style.color=(!flip&&ch!==' '&&(fin||dt<se+.35))?'#E8692D':'#F5F1EA';
+      el.style.color=(!flip&&ch!==' '&&(arv||dt<se+.3))?'#E8692D':'#F5F1EA';
       el.style.transform=flip?'scaleY('+(.5+.5*Math.abs(Math.cos(s*45+c))).toFixed(2)+')':'none';
     }
   }
@@ -102,15 +113,20 @@ frameUpd=function(s){
 function play(){
   A.forEach(a=>a.cancel());A=[];
   an(bd,[{opacity:0},{opacity:1}],{duration:800,delay:100});
-  [pn,rws].forEach(e=>{an(e,[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:700,delay:200,easing:FO});an(e,[{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-12px)'}],{duration:500,delay:7700,fill:'forwards'});});
-  an(ao,[{opacity:0,filter:'blur(8px)',transform:'scale(1.04)'},{opacity:1,filter:'blur(0px)',transform:'none'}],{duration:800,delay:8100,easing:FO});
-  an(ao,[{opacity:1},{opacity:0}],{duration:400,delay:9900,fill:'forwards'});
-  endCard(10400);
+  an(ti1,UP,{duration:500,delay:150});an(ti1,[{opacity:1},{opacity:0}],{duration:250,delay:4850,fill:'forwards'});
+  an(ti2,UP,{duration:450,delay:5000});an(ti2,[{opacity:1},{opacity:0}],{duration:300,delay:8600,fill:'forwards'});
+  [pn,rws].forEach(e=>{an(e,[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:500,delay:150,easing:FO});an(e,[{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-12px)'}],{duration:350,delay:8750,fill:'forwards'});});
+  an(ph1,[{opacity:1},{opacity:0}],{duration:200,delay:5000});
+  an(ph2,[{opacity:0},{opacity:1}],{duration:200,delay:5050});
+  sks.forEach((k,r)=>{an(k,[{width:'0px'},{width:'328px'}],{duration:220,delay:ST[r]*1000,easing:'ease-out'});an(k,[{opacity:1},{opacity:0}],{duration:100,delay:AR[r]*1000-60,fill:'forwards'});});
+  pol.forEach((e,i)=>an(e,[{transform:'translateY(140%)'},{transform:'none'}],{duration:600,delay:9000+i*500,easing:FO}));
+  an(po,OUT,{duration:400,delay:10600});
+  endCard(11000);
   st=performance.now();
 }
 function tick(now){if(st){const s=Math.min(15,(now-st)/1000);if(frameUpd)frameUpd(s);tmEl.textContent=s.toFixed(1)+' / 15s';}requestAnimationFrame(tick);}
 $('rp').onclick=play;
-Promise.all([document.fonts.load('800 84px Montserrat'),document.fonts.load('500 11px Montserrat'),document.fonts.load('500 46px "Cormorant Garamond"'),document.fonts.load('76px "Great Vibes"')]).catch(()=>{}).then(()=>{play();requestAnimationFrame(tick);});
+Promise.all([document.fonts.load('800 84px Montserrat'),document.fonts.load('500 22px "II Increments Sans"'),document.fonts.load('500 22px "Inter Tight"')]).catch(()=>{}).then(()=>{play();requestAnimationFrame(tick);});
 </script>
 </body>
 </html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Origin Media | Social media and campaigns that get remembered</title>
+  <meta name="description" content="Origin Media runs social media and marketing campaigns for brands and individuals, built on the story only you can tell.">
+  <meta name="theme-color" content="#070707">
+  <meta property="og:title" content="Origin Media">
+  <meta property="og:description" content="Every great brand has an origin. We help you tell it.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand wm" href="#top" aria-label="Origin Media, back to top">
+      <span class="r1"><svg class="mk" viewBox="8 8 84 84" aria-hidden="true"><line x1="29.2" y1="38" x2="15.4" y2="30" stroke="#E8692D" stroke-width="11"/><line x1="26" y1="50" x2="10" y2="50" stroke="#E8692D" stroke-width="11"/><line x1="29.2" y1="62" x2="15.4" y2="70" stroke="#E8692D" stroke-width="11"/><path class="arc" d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke-width="18"/></svg><span>r</span><span class="i">ı<b class="tt"></b></span><span>g</span><span class="i">ı<b class="tt"></b></span><span>n</span></span>
+      <span class="md">media</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+    </nav>
+    <a class="btn btn-solid" href="#contact">Start a project</a>
+  </header>
+
+  <main id="main">
+    <!-- HERO: the 3D logo assembles as you scroll -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-pin">
+        <canvas id="mark3d" aria-hidden="true"></canvas>
+        <svg class="mark-fallback" viewBox="8 8 84 84" aria-hidden="true"><line x1="29.2" y1="38" x2="15.4" y2="30" stroke="#E8692D" stroke-width="11"/><line x1="26" y1="50" x2="10" y2="50" stroke="#E8692D" stroke-width="11"/><line x1="29.2" y1="62" x2="15.4" y2="70" stroke="#E8692D" stroke-width="11"/><path d="M42 20.1 A31 31 0 1 1 42 79.9" fill="none" stroke="#F3EFE8" stroke-width="18"/></svg>
+        <div class="hero-copy wrap">
+          <h1 id="hero-title" class="hero-title">Every great brand has an origin.</h1>
+          <p class="lead">We run social media and marketing campaigns for brands and individuals, built on the story only you can tell.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="#contact">Start a project</a>
+            <a class="btn btn-ghost" href="#services">See what we do</a>
+          </div>
+        </div>
+        <p class="scroll-hint" aria-hidden="true">Scroll to bring it together</p>
+      </div>
+    </section>
+
+    <!-- BELIEF -->
+    <section class="statement wrap" aria-label="What we believe">
+      <p><span class="dim">Content is everywhere.</span> Stories stay. We help brands and people get remembered, not just seen.</p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="services-title">What we do</h2>
+          <p>Three ways to work with us. Each one starts with your story.</p>
+        </div>
+
+        <div class="service-list">
+          <details class="service" open>
+            <summary>
+              <h3>Social media for brands</h3>
+              <span class="sum">Your channels planned, created and run with one clear voice.</span>
+              <span class="toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="service-body">
+              <p>We become your social team. We find what makes your brand worth following, then show up for you every week with content people actually stop for.</p>
+              <ul>
+                <li>Content strategy and monthly calendar</li>
+                <li>Reels, carousels and stories</li>
+                <li>Community management</li>
+                <li>Monthly reporting and planning</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service">
+            <summary>
+              <h3>Personal brands</h3>
+              <span class="sum">For founders, creators and professionals who want to be known for what they believe.</span>
+              <span class="toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="service-body">
+              <p>People trust people. We help you find your voice, shape your story and turn it into content that builds authority without feeling forced.</p>
+              <ul>
+                <li>Positioning and voice</li>
+                <li>Scripting and shoot days</li>
+                <li>Instagram and LinkedIn growth</li>
+                <li>Founder-led content for your brand</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="service">
+            <summary>
+              <h3>Campaigns</h3>
+              <span class="sum">Launches, festive moments and big announcements, planned end to end.</span>
+              <span class="toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="service-body">
+              <p>When a moment matters, we build the idea, make the content and get it in front of the right people, so it's remembered long after it runs.</p>
+              <ul>
+                <li>Campaign idea and script</li>
+                <li>Shoots and production</li>
+                <li>Paid social</li>
+                <li>Creator and influencer collaborations</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="approach wrap" id="approach" aria-labelledby="approach-title">
+      <div class="section-head">
+        <h2 id="approach-title">How we work</h2>
+        <p>The same four steps, whether you're a brand or a person.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="step-n">01</span><h3>Listen</h3><p>We start with your story: why you began, who you serve, and what makes you different.</p></li>
+        <li><span class="step-n">02</span><h3>Find the angle</h3><p>We turn it into a clear voice and three content pillars you can own.</p></li>
+        <li><span class="step-n">03</span><h3>Make the work</h3><p>Reels, posts, shoots and campaigns, made to stop the scroll and stay remembered.</p></li>
+        <li><span class="step-n">04</span><h3>Learn and grow</h3><p>Every month we review what worked, cut what didn't and sharpen the plan.</p></li>
+      </ol>
+    </section>
+
+    <!-- WORK: fills in automatically from site.js -->
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="work-title">Work</h2>
+          <p>Stories we've helped tell.</p>
+        </div>
+        <div class="work-grid" id="work-grid"></div>
+        <div class="work-empty" id="work-empty">
+          <h3>Our first case studies are being written right now.</h3>
+          <div>
+            <p>We're taking on a small number of founding clients. Yours could be the story we show here first.</p>
+            <a class="btn btn-solid" href="#contact">Start a project</a>
+          </div>
+        </div>
+        <div class="clients" id="clients" hidden>
+          <p>Brands and people we've worked with</p>
+          <ul id="client-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title" class="contact-title">Tell us where your brand began.</h2>
+        <p class="lead">Share a few lines about your brand or yourself. We reply within one working day.</p>
+        <ul class="contact-links">
+          <!-- Replace the email and WhatsApp number with your own -->
+          <li><a href="mailto:hello@originmedia.in"><span>Email</span><span>hello@originmedia.in</span></a></li>
+          <li><a href="https://wa.me/910000000000" target="_blank" rel="noopener"><span>WhatsApp</span><span>Message us</span></a></li>
+          <li><a href="https://www.instagram.com/originmedia.ind/" target="_blank" rel="noopener"><span>Instagram</span><span>@originmedia.ind</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <span>© <span id="yr"></span> Origin Media</span>
+    <span>Every great brand has an origin.</span>
+  </footer>
+</body>
+</html>

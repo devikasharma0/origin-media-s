@@ -3,6 +3,7 @@
 /origin-renders/frames/
 /origin-renders/out/*.mp4
 /origin-renders/audio/
+/origin-renders/out/
 .env
 .env.*
 .DS_Store
