@@ -1,4 +1,4 @@
-/* II Increments Sans — needs a WEB licence. Until the files are here, Inter Tight is used. */
+/* II Increments Sans needs a WEB licence. Until the files are in /fonts, Inter Tight is used. */
 @font-face {
   font-family: 'II Increments Sans'; font-weight: 400; font-display: swap;
   src: url('fonts/IIIncrementsSans-Regular.woff2') format('woff2'), url('fonts/IIIncrementsSans-Regular.otf') format('opentype');
@@ -21,10 +21,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-stopped { overflow: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
 body { background: var(--ink); color: var(--paper); font-family: var(--font); font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -51,7 +48,7 @@ a { color: inherit; }
 .btn-ghost:hover { border-color: var(--paper); }
 
 /* ---------- Header ---------- */
-.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; gap: 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); transition: background-color .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; gap: 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); border-bottom: 1px solid transparent; transition: background-color .3s, border-color .3s; }
 .site-header.scrolled { background: rgba(7, 7, 7, .82); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom-color: var(--line); }
 .brand { font-size: 1.55rem; }
 .site-header nav { display: flex; gap: 1.75rem; margin-left: auto; }
@@ -60,22 +57,20 @@ a { color: inherit; }
 .site-header .btn { min-height: 40px; padding: 0 1.1rem; font-size: .9rem; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; height: 230vh; }
-.hero-pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; align-items: end; }
-#mark3d { position: absolute; top: 0; right: 0; width: 60%; height: 100%; opacity: 0; transition: opacity 1.2s ease; }
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: end; overflow: hidden; }
+#mark3d { position: absolute; top: 0; right: 0; width: 54%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 1s ease; }
 #mark3d.ready { opacity: 1; }
 .mark-fallback { display: none; }
 .no-webgl #mark3d { display: none; }
-.no-webgl .mark-fallback { display: block; position: absolute; right: 10%; top: 45%; width: min(34vw, 400px); transform: translateY(-50%); }
-.hero-copy { position: relative; padding-bottom: clamp(3rem, 10vh, 7rem); }
-.hero-title { font-weight: 500; font-size: clamp(2.6rem, 6.4vw, 6.2rem); line-height: .98; letter-spacing: -.035em; max-width: 11ch; }
+.no-webgl .mark-fallback { display: block; position: absolute; right: 10%; top: 45%; width: min(30vw, 360px); transform: translateY(-50%); }
+.hero-copy { position: relative; z-index: 1; padding-top: 7rem; padding-bottom: clamp(3rem, 10vh, 7rem); }
+.hero-title { font-weight: 500; font-size: clamp(2.6rem, 6.2vw, 6rem); line-height: .98; letter-spacing: -.035em; max-width: 11ch; }
 .lead { font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.55; color: rgba(243, 239, 232, .72); max-width: 38ch; margin-top: 1.5rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-.scroll-hint { position: absolute; right: clamp(1.25rem, 4vw, 3rem); bottom: 2rem; font-size: .85rem; color: var(--ash); }
 
-/* ---------- Statement ---------- */
-.statement { padding-block: clamp(5rem, 14vh, 10rem); }
-.statement p { font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.028em; font-weight: 500; max-width: 24ch; }
+/* ---------- Belief statement (rises out of depth on scroll) ---------- */
+.statement { padding-block: clamp(5rem, 14vh, 10rem); perspective: 1000px; }
+.statement p { font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.028em; font-weight: 500; max-width: 24ch; transform-origin: 50% 100%; will-change: transform, opacity; }
 .statement .dim { color: var(--ash); }
 
 /* ---------- Section heads ---------- */
@@ -114,7 +109,7 @@ a { color: inherit; }
 /* ---------- Work ---------- */
 .work { padding-block: clamp(5rem, 12vh, 8rem); border-top: 1px solid var(--line); }
 .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 1.5rem; }
-.work-card { display: block; text-decoration: none; }
+.work-card { display: block; text-decoration: none; border-radius: 6px; }
 .work-card .img { aspect-ratio: 4 / 5; background: var(--ink-2); overflow: hidden; border-radius: 6px; }
 .work-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
 .work-card:hover img { transform: scale(1.03); }
@@ -127,6 +122,14 @@ a { color: inherit; }
 .clients > p { color: var(--ash); margin-bottom: 1.5rem; }
 .clients ul { list-style: none; display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: center; }
 .clients img { height: 28px; width: auto; opacity: .75; filter: grayscale(1) brightness(2); }
+
+/* ---------- Cards that tilt toward the cursor ---------- */
+.tilt { position: relative; will-change: transform; }
+.tilt::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(243, 239, 232, .07), transparent 60%);
+  opacity: var(--hl, 0);
+}
 
 /* ---------- Contact ---------- */
 .contact { padding-block: clamp(6rem, 16vh, 10rem); border-top: 1px solid var(--line); }
@@ -141,10 +144,9 @@ a { color: inherit; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  #mark3d { width: 100%; height: 56%; }
+  #mark3d { width: 100%; height: 55%; }
   .hero-title { max-width: 12ch; }
   .hero-copy { padding-bottom: 2.5rem; }
-  .scroll-hint { display: none; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
@@ -164,41 +166,4 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   #mark3d { transition: none; }
-  .hero { height: 100vh; }
-}
-/* ---------- 3D across the page ---------- */
-
-/* Belief statement rises out of depth */
-.statement { perspective: 1000px; }
-.statement p { transform-origin: 50% 100%; will-change: transform, opacity; }
-
-/* Services: list + 3D object side by side */
-.services-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.services-visual { position: sticky; top: 110px; aspect-ratio: 1 / 1.05; }
-#services3d { display: block; width: 100%; height: 100%; }
-.service summary { grid-template-columns: 1fr 28px; gap: .6rem 1.5rem; }
-.service .sum { grid-column: 1 / -1; grid-row: 2; }
-.service-body { grid-template-columns: 1fr; gap: 1.25rem; }
-.service-body ul { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
-
-/* Cards that tilt toward the cursor */
-.tilt { position: relative; will-change: transform; }
-.tilt::after {
-  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(243, 239, 232, .07), transparent 60%);
-  opacity: var(--hl, 0);
-}
-
-/* Contact: the logo returns */
-.contact .wrap { position: relative; }
-#contact3d { position: absolute; right: -4%; top: 50%; transform: translateY(-62%); width: min(44vw, 540px); aspect-ratio: 1; pointer-events: none; }
-.contact-title, .contact .lead, .contact-links { position: relative; z-index: 1; }
-
-@media (max-width: 900px) {
-  .services-layout { grid-template-columns: 1fr; }
-  .services-visual { display: none; }
-  #contact3d { width: 72vw; right: -18vw; top: -2rem; transform: none; opacity: .45; }
-}
-@media (max-width: 560px) {
-  .service-body ul { grid-template-columns: 1fr; }
 }
