@@ -21,7 +21,10 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
 body { background: var(--ink); color: var(--paper); font-family: var(--font); font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -69,8 +72,8 @@ a { color: inherit; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
 
 /* ---------- Belief statement (rises out of depth on scroll) ---------- */
-.statement { padding-block: clamp(5rem, 14vh, 10rem); perspective: 1000px; }
-.statement p { font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.028em; font-weight: 500; max-width: 24ch; transform-origin: 50% 100%; will-change: transform, opacity; }
+.statement { padding-block: clamp(5rem, 14vh, 10rem); }
+.statement p { font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.12; letter-spacing: -.028em; font-weight: 500; max-width: 24ch; }
 .statement .dim { color: var(--ash); }
 
 /* ---------- Section heads ---------- */
@@ -123,13 +126,6 @@ a { color: inherit; }
 .clients ul { list-style: none; display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: center; }
 .clients img { height: 28px; width: auto; opacity: .75; filter: grayscale(1) brightness(2); }
 
-/* ---------- Cards that tilt toward the cursor ---------- */
-.tilt { position: relative; will-change: transform; }
-.tilt::after {
-  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(243, 239, 232, .07), transparent 60%);
-  opacity: var(--hl, 0);
-}
 
 /* ---------- Contact ---------- */
 .contact { padding-block: clamp(6rem, 16vh, 10rem); border-top: 1px solid var(--line); }

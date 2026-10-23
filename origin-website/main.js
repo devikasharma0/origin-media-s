@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
+import Lenis from 'lenis';
 // ---------- Tuning ----------
 const CONFIG = {
   startDelay: 0.5,    // seconds after load before the segments start moving
@@ -15,6 +15,23 @@ const canvas = document.getElementById('mark3d');
 const hero = document.querySelector('.hero');
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobile = window.matchMedia('(max-width: 900px)').matches;
+// ---------- Smooth scrolling ----------
+// lerp: lower = smoother and floatier (0.07), higher = snappier (0.15)
+if (!reduce) {
+  const lenis = new Lenis({ lerp: 0.1, smoothWheel: true, wheelMultiplier: 1 });
+  const raf = time => { lenis.raf(time); requestAnimationFrame(raf); };
+  requestAnimationFrame(raf);
+
+  document.querySelectorAll('a[href^="#"]:not(.skip)').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const target = id === '#top' ? 0 : document.querySelector(id);
+      if (target === null) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: id === '#top' ? 0 : -72, duration: 1.2 });
+    });
+  });
+}
 
 function webglAvailable() {
   try {
