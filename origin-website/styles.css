@@ -140,10 +140,25 @@ a { color: inherit; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  #mark3d { width: 100%; height: 55%; }
-  .hero-title { max-width: 12ch; }
-  .hero-copy { padding-bottom: 2.5rem; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Phones and tablets held upright: logo on top, text below */
+@media (max-width: 900px) and (orientation: portrait) {
+  .hero { display: flex; flex-direction: column; justify-content: flex-end; }
+  #mark3d { position: relative; flex: none; width: 100%; height: 44svh; margin-top: 4.5rem; }
+  .hero-copy { padding-top: 0; padding-bottom: 2.5rem; }
+  .hero-title { max-width: 12ch; }
+}
+
+/* Phones turned sideways: text on the left, logo on the right */
+@media (orientation: landscape) and (max-height: 560px) {
+  .hero { min-height: auto; }
+  #mark3d { width: 44%; height: 100%; }
+  .hero-copy { padding-top: 6.5rem; padding-bottom: 2.5rem; }
+  .hero-title { font-size: clamp(2.2rem, 5.2vw, 3.4rem); max-width: 10ch; }
+  .hero .lead { font-size: 1rem; max-width: 30ch; margin-top: 1rem; }
+  .hero .actions { margin-top: 1.5rem; }
 }
 @media (max-width: 720px) {
   .site-header nav { display: none; }
